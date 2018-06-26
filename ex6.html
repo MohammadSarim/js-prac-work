@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Es6</title>
 </head>
-<body>
-        <script>
-                var objects =  [{
-                    name: 'sarim' , gender : 'male' , nationality : 'Pakistani'
-                },
-                {name: 'masood' , gender : 'male' , nationality : 'Indian'},
-                {name: 'Rabia' , gender : 'female' , nationality : 'Americen'},
-                {name: 'ali' , gender : 'male' , nationality : 'Israel'},
 
-                ];
-            var ages = [
-                12, 34, 33 ,71 ,18 , 20  
-            ];
+<body>
+    <script>
+        var objects = [{
+            name: 'sarim', gender: 'male', nationality: 'Pakistani'
+        },
+        { name: 'masood', gender: 'male', nationality: 'Indian' },
+        { name: 'Rabia', gender: 'female', nationality: 'Americen' },
+        { name: 'ali', gender: 'male', nationality: 'Israel' },
+
+        ];
+        var ages = [
+            12, 34, 33, 71, 18, 20
+        ];
 
             // for(var i =0 ; i< objects.length ; i++){
             //     console.log(objects[i]);
             // }
-        
+
                 // objects.forEach(function (d){
                     // console.log(d);
                     // console.log(d.gender);
             //   })
-        
+
         //  without es6 
 
         // var userArray = [];
@@ -38,9 +40,9 @@
         //     }
 
         // }
-        
+
         // console.log(userArray);
-        
+
 
     //    var v = ages.filter( (d)=>{
 
@@ -54,7 +56,7 @@
     //     var v = objects.filter(d => 
     // console.log(v.name)
     //     );
-        
+
         //  getting just gender female
 
         // var r = objects.filter(function (d){
@@ -62,18 +64,29 @@
         //         return true
         //     }
         // })
-        
+
         // console.log(r);
-        
-        
+
+
         // map
 
         // var d = objects.map((v)=>{
-            
-        
+
+
         //     console.log( v.gender);
         // })
-        
+
+        // map && set 
+
+        var m = new Map();
+
+        m.set('name' , 'sarim');
+        console.log(m.get('name'));
+
+
+
+
+
         // sort
 
     //   var dd =  objects.sort();
@@ -85,12 +98,12 @@
             //     return -1
         //     }
         // })
-        
+
         // console.log(dd);
-        
+
         // var d = ages.sort();
         // console.log(d); 
-        
+
 
         // sort ages small to highest
 
@@ -101,17 +114,18 @@
             //     return -1
             // }
         // })
-        
+
         // console.log(d);
-        
+
         // sor ages highest to low
 
-        var d = ages.sort((a , b) => b - a )
+        // var d = ages.sort((a , b) => b - a )
+        // console.log(d); 
 
-        console.log(d); 
-        
-        
-        
-        </script>
+
+
+
+    </script>
 </body>
+
 </html>

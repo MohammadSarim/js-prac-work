@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAnxID9LwOoZKJBqM-Mmo_obB6FXWf1xDE",
+    authDomain: "stop-watch-3ea94.firebaseapp.com",
+    databaseURL: "https://stop-watch-3ea94.firebaseio.com",
+    projectId: "stop-watch-3ea94",
+    storageBucket: "stop-watch-3ea94.appspot.com",
+    messagingSenderId: "565444832656"
+  };
+  firebase.initializeApp(config);
+</script>
+</head>
+<body>
+            <input type="text " onclick="focus()" id="myInput" >
+            <input type="text" id="f_name ">
+            <button onclick="submit()">submit</button>
+
+            <div id="data"></div>
+</body>
+        <script src="app.js"></script>
+</html>

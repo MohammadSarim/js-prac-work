@@ -29,6 +29,8 @@
                 //     console.log(d.gender);
               // })
         
+        //  without es6 
+
         // var userArray = [];
         // for(let i = 0 ; i < ages.length ; i++){
         //     if(ages[i] >= 21  ){
@@ -49,9 +51,33 @@
     //     })
 
     // ec6 filter with es6
-        var v = ages.filter(d => d >= 21);
-    console.log(v);
+    //     var v = objects.filter(d => 
+    // console.log(v.name)
+    //     );
+        
+        //  getting just gender female
 
+        var r = objects.filter(function (d){
+            if(d.gender === 'female'){
+                return true
+            }
+        })
+        
+        console.log(r);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         </script>
 </body>
 </html>

@@ -68,14 +68,25 @@
         
         // map
 
-        var d = objects.map((v)=>{
-            return v.gender;
+        // var d = objects.map((v)=>{
+            
+        
+        //     console.log( v.gender);
+        // })
+        
+        // sort
+
+      var dd =  ages.sort(function (a,b){
+            if(a.start > b.start){
+                return 1
+
+            }
+            else{
+                return -1
+            }
         })
         
-            console.log(d);
-        
-        
-        
+        console.log(dd);
         
         
         

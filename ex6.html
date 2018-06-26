@@ -25,9 +25,9 @@
             // }
         
                 // objects.forEach(function (d){
-                //     console.log(d.name );
-                //     console.log(d.gender);
-              // })
+                    // console.log(d);
+                    // console.log(d.gender);
+            //   })
         
         //  without es6 
 
@@ -57,16 +57,22 @@
         
         //  getting just gender female
 
-        var r = objects.filter(function (d){
-            if(d.gender === 'female'){
-                return true
-            }
+        // var r = objects.filter(function (d){
+        //     if(d.gender === 'female'){
+        //         return true
+        //     }
+        // })
+        
+        // console.log(r);
+        
+        
+        // map
+
+        var d = objects.map((v)=>{
+            return v.gender;
         })
         
-        console.log(r);
-        
-        
-        
+            console.log(d);
         
         
         

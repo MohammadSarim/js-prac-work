@@ -76,7 +76,7 @@
         
         // sort
 
-      var dd =  objects.sort();
+    //   var dd =  objects.sort();
             // if(a.start > b.start){
             //     return 1
 
@@ -86,13 +86,22 @@
         //     }
         // })
         
-        console.log(dd);
+        // console.log(dd);
         
-        var d = ages.sort();
-        console.log(d); 
+        // var d = ages.sort();
+        // console.log(d); 
         
+
+        // sort ages small to highest
+        var d = ages.sort(function(a,b ){
+            if( a - b){
+                return 1
+            }else{
+                return -1
+            }
+        })
         
-        
+        console.log(d);
         
         
         

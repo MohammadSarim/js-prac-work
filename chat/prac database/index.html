@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB-z6qTO4VeBvRhkjs9hNJS-nZf15mEt-Q",
+    authDomain: "chat-b7847.firebaseapp.com",
+    databaseURL: "https://chat-b7847.firebaseio.com",
+    projectId: "chat-b7847",
+    storageBucket: "chat-b7847.appspot.com",
+    messagingSenderId: "828916091012"
+  };
+  firebase.initializeApp(config);
+</script>
+    <title>Document</title>
+</head>
+<body>
+        <input type="text" id="data" >
+        <button id="btn" onclick="submit()">submit</button>
+</body>
+        <script>
+            let data = document.getElementById('data');
+            let btn = document.getElementById('btn');
+
+            // btn.addEventListener("click" , submit())
+            function submit(){
+                // 
+                let obj = {
+                    data : data.value,
+                    // checked : "right",
+                };
+
+                let f = firebase.database();
+                let ref = f.ref('pracDatabase/').push();
+                ref.set(obj);
+                // f.on('value',gdata ,err)
+                
+            }
+            // let g = firebase.database().ref('pracDatabase/')
+            //     g.on('value' , gdata )
+            // function gdata(data){
+            //     let score = data.val();1
+            //     let key = Object.keys(score)
+            //     console.log(key);
+            // }
+            // function err(){
+            //     console.log(err)
+            // }
+        
+        
+        
+        </script>
+</html>

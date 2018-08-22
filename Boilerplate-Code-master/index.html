@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="manifest" href="manifest.json">
+    <title>Boilerplate Code</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light navBG">
+        <a class="navbar-brand" href="#">Boilerplate Code</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Anything</a>
+                </li>
+            </ul>
+            <!-- Modal activate buttons -->
+            <button class="btn btn-secondary my-2 my-sm-0" id="signup" style="margin-right:10px;" type="submit" data-toggle="modal" data-target="#registermodal">
+                <i class="fa fa-lock"></i> Sign Up</button>
+            <button class="btn btn-info my-2 my-sm-0" id="login" style="margin-right:10px;" type="submit" data-toggle="modal" data-target="#signinmodal">
+                <i class=" fa fa-sign-in"></i> Log In</button>
+            <!-- <button class="btn btn-warning my-2 my-sm-0" id="verify" type="button" style="margin-right:10px;" onclick="sendVerificationLink()">
+                <i class=" fa fa-inbox"></i> Verify</button> -->
+            <button class="btn btn-danger my-2 my-sm-0" id="logout" type="submit" onclick="logOut()">
+                <i class=" fa fa-sign-out"></i> Log Out</button>
+        </div>
+    </nav>
+
+    <!-- signup -->
+    <div class="modal fade" id="registermodal" tabindex="-1" role="dialog" aria-labelledby="registermodalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registermodalLabel">Sign Up</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="name" class="">Username:</label>
+                    <input type="text" required="required" class="form-control" maxlength="20" placeholder="e.g.   Ali" id="name">
+                    <label for="number" class="">Number: </label>
+                    <input type="tel" placeholder="e.g.  03XXxxxxxxx" id="number" maxlength="11" class="form-control">
+                    <label for="password" class="">Password:</label>
+                    <input type="password" required="required" placeholder="**********" id="password" class="form-control">
+                    <label for="email" class="">Email:</label>
+                    <input type="email" required="required" placeholder="e.g.   abc@example.com" class="form-control" id="email">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" onclick="signup()">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- signin -->
+    <div class="modal fade" id="signinmodal" tabindex="-1" role="dialog" aria-labelledby="signinmodalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signinmodalLabel">Sign In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="email">Email:</label>
+                    <input type="email" required="required" placeholder="e.g.  abc@example.com" class="form-control" id="userEmail">
+                    <label for="password">Password:</label>
+                    <input type="password" required="required" placeholder="**********" id="userPassword" class="form-control">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" onclick="login()">Sign In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        This app was made by
+        <strong>
+            <a style="color:rgb(0, 0, 0);" href="https://github.com/manalliaquat" target="_blank">Manal Liaquat</a>
+        </strong>.
+    </footer>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js')
+                .then(function () {
+                    console.log('Service Worker Registered');
+                });
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAPmBQCVich80j6Cy9l3bChvatsEmDCjY8",
+            authDomain: "hackathonpk.firebaseapp.com",
+            databaseURL: "https://hackathonpk.firebaseio.com",
+            projectId: "hackathonpk",
+            storageBucket: "",
+            messagingSenderId: "750827889580"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

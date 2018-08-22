@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form id="register-form" style="display:none;" data-async  method="post" role="form">
+        <div class="modal-body">
+           <input id="rfullname" class="form-control" name="mname" type="text" placeholder="Your Full Name">
+           <input id="remail" class="form-control" name="email" type="text" placeholder="E-Mail">
+           <input id="rpassword" class="form-control" name="password" type="password" placeholder="Password">
+        </div>
+        <div class="modal-footer">
+           <div>
+              <button type="submit" name="submit" id="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+           </div>
+           <div>
+              <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
+              <button id="register_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
+           </div>
+        </div>
+     </form>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <script src="jquery-3.3.1.min.js"></script> -->
+    <script>
+           $(function () {
+//twitter bootstrap script
+        $("button#submit").click(function () {
+            $(document).ready(function () {
+                $('#register-form').formValidation({
+                    framework: 'bootstrap',
+                    excluded: ':disabled',
+                    icon: {
+                        valid: 'glyphicon glyphicon-ok',
+                        invalid: 'glyphicon glyphicon-remove',
+                        validating: 'glyphicon glyphicon-refresh'
+                    },
+                    fields: {
+                        rfullname: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'The username is required'
+                                }
+                            }
+                        },
+                        rpassword: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'The password is required'
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+
+            $.ajax({
+                type: "POST",
+                url: "process.php",
+                data: $('form#register-form').serialize(),
+                success: function (msg) {
+                    //$("#thanks").html(msg)
+                    $("#login-modal").modal('hide');
+                    bootbox.alert(msg);
+                    $('#register-form').each(function () {
+                        this.reset();
+                    });
+                },
+                error: function () {
+                    alert("failure");
+                }
+            });
+        });
+    });
+    </script>
+</html>

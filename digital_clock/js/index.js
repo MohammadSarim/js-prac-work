@@ -5,15 +5,15 @@ content.addEventListener("load" , todayTime());
 
 
 function todayTime(){
-let time = new Date();
-let hours = time.getHours();
+const time = new Date();
+const hours = time.getHours();
 let min = time.getMinutes();
 let sec = time.getSeconds();
 // console.log(sec);
 // min = checkTime(min);
 sec = checkTime(sec);
 content.innerHTML = hours + ":" + min + ":" + sec ;
-var t = setTimeout(todayTime, 500); 
+const t = setTimeout(todayTime, 500); 
 }
 
 function checkTime(i) {
